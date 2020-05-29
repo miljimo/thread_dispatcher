@@ -78,18 +78,15 @@ if(__name__ =="__main__"):
 
     def Task2(a , b):
         result  = (a + b);
-        print("Task 2 Thread Id = {0} \n".format(threading.current_thread().name));
+        print("Thread Id = {0} , result ={1} \n".format(threading.current_thread().ident, result ));
         return result;
 
 
     def ExternalRun(dispatcher):
         a  = 1
         while(True):
-            print("Thread Id = {0} \n".format(threading.current_thread().name));
-            operation =  dispatcher.Invoke(Task2, a ,  6);
-            #operation.Wait();
-            print("Result for wait  =  {0}".format(operation.Result));
-            
+            print("Invoked {0}".format(threading.current_thread().ident));
+            dispatcher.Invoke(Task2, a ,  10);
             a =  a + 1;
 
           
@@ -98,8 +95,9 @@ if(__name__ =="__main__"):
     dispatcher.Invoke(Task1);
     dispatcher.Invoke(Task2, 5, 6);
     print(dispatcher.Thread);
-    t  =  threading.Thread(target=ExternalRun, args=(dispatcher,));
-    t.daemon = True;
-    t.start();
+    for i in range(1, 20):
+        t  =  threading.Thread(target=ExternalRun, args=(dispatcher,));
+        t.daemon = True;
+        t.start();
     dispatcher.Run();
     
