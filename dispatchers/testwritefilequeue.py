@@ -72,12 +72,12 @@ if(__name__ =="__main__"):
     dispatcher.Invoke(Task1);
     dispatcher.Invoke(Task2, 5, 6);
     print(dispatcher.Thread);
-    for i in range(1, 20):
+    for i in range(0, 2):
         t  =  threading.Thread(target=ExternalRun, args=(dispatcher,));
         t.daemon = True;
         t.start();
     
-    time.sleep(1);
+    
     totaltime  =  datetime.now()  - datetime.now();
     while(TERMINATE != True):
         try:
@@ -88,10 +88,10 @@ if(__name__ =="__main__"):
                 continue;
             total_jobs+=1;
             totaltime = op.ElapseTime + totaltime;
-            print("Time Created: {0}  ,  Result  = {1} , Total Process time ={2} , Jobs ={3}, file-size ={4}  , Queue Size ={5}".format(op.ElapseTime ,
+            print("Time Created:{0},Result= {1},Total Process time={2},Jobs ={3},file-size ={4},Queue Size ={5},Wait Time{6}".format(op.ElapseTime ,
                                                                                                       op.Result[0] ,
                                                                                                       totaltime,
-                                                                                                      total_jobs, op.Result[1],dispatcher.Count ));
+                                                                                                      total_jobs, op.Result[1],dispatcher.Count, op.WaitTime ));
             pass;
         except Exception as err:
             TERMINATE = True;
