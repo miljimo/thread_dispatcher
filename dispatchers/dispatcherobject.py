@@ -1,4 +1,4 @@
-from dispatcher import Dispatcher;
+from dispatchers import Dispatcher;
 
 
 class DispatcherObject(object):

@@ -1,5 +1,5 @@
 import threading;
-from dispatcheroperation import DispatcherOperation
+from dispatchers.dispatcheroperation import DispatcherOperation
 import queue       
 
 class DispatcherQueue(object):
