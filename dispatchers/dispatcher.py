@@ -5,7 +5,6 @@ from datetime import datetime;
 from dispatchers.dispatcheroperation import DispatcherOperation
 from dispatchers.dispatcherqueue     import DispatcherQueue;        
 
-
 class Dispatcher:
 
     __dispatchers  = list();
