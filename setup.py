@@ -17,7 +17,7 @@ setuptools.setup(name="dispatchers-jimobama",
                  author_email="johnson.obaro@hotmail.com",
                  packages=['dispatchers',],
                  install_requires=[
-                     'events-jimobama @ git+https://github.com/miljimo/events.git@02e5be98bf50e65fc6c07089238aa16615853fa4'],
+                     'events-jimobama @ git+https://github.com/miljimo/events.git'],
                  classifiers=[
                      "Programming Language :: Python :: 3",
                      "License :: OSI Approved :: MIT License",
