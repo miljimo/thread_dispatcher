@@ -1,6 +1,7 @@
 
-from dispatchers.dispatcheroperation import DispatcherOperation;
-from dispatchers.dispatcherqueue import DispatcherQueue;
-from dispatchers.dispatcher import Dispatcher;
-from dispatchers.dispatcherobject import DispatcherObject;
+from dispatchers.dispatcherbase import DispatcherBase
+from dispatchers.dispatcheroperation import DispatcherOperation
+from dispatchers.dispatcherqueue import DispatcherQueue
+from dispatchers.dispatcher import Dispatcher
+from dispatchers.dispatcherobject import DispatcherObject
 
